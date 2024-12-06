@@ -3,6 +3,7 @@ Part of my Term Paper for the course **AM6515-Boundary Layer Stability** at **II
 This repository contains a **MATLAB** based code to solve the Orr-Sommerfeld Equation. 
 The file *blasius_shooting.m* contains a method to solve the **Blasius profile** by a shooting method and RK-4 intetegration (*rk4.m*). It then solves the Orr-Sommerfeld equation by using a central difference scheme to estimate the second and fourth order derivatives which is used for approximating the Boundary conditions for the system of equations.
 The file *plane_poiseulle.m* contains a code for solving the Orr-Sommerfeld equation for a **Plane-Posieulle flow profile** by Spectral Methods using the Chebyshev Polynomial expansions. 
+Follow the references for gaining a deeper understanding of how the code works. They helped me a lot.
 
 References:
 1) [**Temporal and Spatial Stability Analysis of the Orr-Sommerfeld Equation**](https://www.cdsimpson.net/2015/04/temporal-and-spatial-stability-analysis.html#:~:text=This%20is%20a%20nonlinear%20ordinary,opposite%20boundary%20conditions%20are%20met).
