@@ -23,7 +23,7 @@ $$(\overline{U} - c)\left(\frac{d^2}{dy^2} - k^2\right)\hat{\psi} - \hat{\psi}\f
 ### Shooting Method
 ## Orr-Sommerfeld Equation Solution
 
-**Matrix Formulation:**  
+1. **Matrix Formulation:**  
    - Rewrite the O.S equation as:  
      
      $$\Phi' = A(y)\Phi$$
@@ -33,9 +33,7 @@ $$(\overline{U} - c)\left(\frac{d^2}{dy^2} - k^2\right)\hat{\psi} - \hat{\psi}\f
   ```math
 \Phi = \begin{pmatrix} \hat{\psi} & \frac{d\hat{\psi}}{dy} & \frac{d^2\hat{\psi}}{dy^2} & \frac{d^3\hat{\psi}}{dy^3} \end{pmatrix}, \quad A(y) = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ a & 0 & b & 0 \end{bmatrix}
 ```
-
-  
-     
+with a and b found from the Orr-Sommerfeld equation.
 
 2. **General Solution:**  
    - The general solution is:  
