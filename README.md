@@ -103,7 +103,7 @@ $$
 
 ```
 
-We require this equation to be satisfied at the Gauss-Lobatto collocation points $y_j = \cos\left(\frac{\pi j}{N}\right)$. This allows us to use the recurrence relations to evaluate the derivatives of the Chebyshev polynomials.
+We require this equation to be satisfied at the Gauss-Lobatto collocation points $y_j = \cos\left(\frac{j\pi}{N}\right)$. This allows us to use the recurrence relations to evaluate the derivatives of the Chebyshev polynomials.
 
 The discretized boundary conditions read:
 ```math
