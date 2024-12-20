@@ -23,52 +23,46 @@ $$(\overline{U} - c)\left(\frac{d^2}{dy^2} - k^2\right)\hat{\psi} - \hat{\psi}\f
 ### Shooting Method
 ## Orr-Sommerfeld Equation Solution
 
-1. **Matrix Formulation:**  
+**Matrix Formulation:**  
    - Rewrite the O.S equation as:  
-     \[
-     \Phi' = A(y)\Phi
-     \]  
+     
+     $$\Phi' = A(y)\Phi$$
+     
      with:  
-     \[
-     \Phi = \begin{pmatrix} \hat{\psi} & \frac{d\hat{\psi}}{dy} & \frac{d^2\hat{\psi}}{dy^2} & \frac{d^3\hat{\psi}}{dy^3} \end{pmatrix}, \quad A(y) = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ a & 0 & b & 0 \end{bmatrix}.
-     \]
+     
+     $$\Phi = \begin{pmatrix} \hat{\psi} & \frac{d\hat{\psi}}{dy} & \frac{d^2\hat{\psi}}{dy^2} & \frac{d^3\hat{\psi}}{dy^3} \end{pmatrix}, \quad A(y) = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ a & 0 & b & 0 \end{bmatrix}$$
+     
 
 2. **General Solution:**  
    - The general solution is:  
-     \[
-     \Phi(y) = \gamma_1\Phi^1(y) + \gamma_2\Phi^2(y) + \gamma_3\Phi^3(y) + \gamma_4\Phi^4(y).
-     \]
+     
+     $$\Phi(y) = \gamma_1\Phi^1(y) + \gamma_2\Phi^2(y) + \gamma_3\Phi^3(y) + \gamma_4\Phi^4(y)$$
 
 3. **Initial Conditions:**  
-   - At \( y = y_1 \):  
-     \[
-     \Phi^1 = (0, 0, 0, 1)^T, \, \Phi^2 = (0, 0, 1, 0)^T, \, \Phi^3 = (0, 1, 0, 0)^T, \, \Phi^4 = (1, 0, 0, 0)^T.
-     \]
+   - At $$y = y_1$$  
+   
+     $$\Phi^1 = (0, 0, 0, 1)^T, \, \Phi^2 = (0, 0, 1, 0)^T, \, \Phi^3 = (0, 1, 0, 0)^T, \, \Phi^4 = (1, 0, 0, 0)^T$$
 
 4. **Boundary Conditions:**  
    - Enforce physical boundary conditions:  
-     \[
-     \hat{\psi}(y_1) = 0, \quad \frac{d\hat{\psi}}{dy}(y_1) = 0.
-     \]  
+   
+     $$\hat{\psi}(y_1) = 0, \quad \frac{d\hat{\psi}}{dy}(y_1) = 0$$ 
      This reduces the solution to:  
-     \[
-     \Phi(y) = \gamma_1\Phi^1(y) + \gamma_2\Phi^2(y).
-     \]
+   
+     $$\Phi(y) = \gamma_1\Phi^1(y) + \gamma_2\Phi^2(y)$$
 
 5. **Numerical Integration:**  
-   - Use RK-4 to solve for \( \Phi^1(y) \) and \( \Phi^2(y) \).
+   - Use RK-4 to solve for $$\Phi^1(y)$$  and $$\Phi^2(y)$$
 
 6. **Eigenvalue Problem:**  
-   - At \( y = y_2 \), impose:  
-     \[
-     \gamma_1\Phi^1_1(y_2) + \gamma_2\Phi^2_1(y_2) = 0, \quad \gamma_1\Phi^1_2(y_2) + \gamma_2\Phi^2_2(y_2) = 0.
-     \]
+   - At $$y = y_2$$, impose:  
+     
+     $$\gamma_1\Phi^1_1(y_2) + \gamma_2\Phi^2_1(y_2) = 0, \quad \gamma_1\Phi^1_2(y_2) + \gamma_2\Phi^2_2(y_2) = 0$$
 
 7. **Solve Determinant:**  
-   - For non-trivial \( \gamma_1, \gamma_2 \), solve:  
-     \[
-     L = \Phi^1_1(y_2)\Phi^2_2(y_2) - \Phi^1_2(y_2)\Phi^2_1(y_2) = 0.
-     \]
+   - For non-trivial $$\gamma_1, \gamma_2$$ , solve:  
+
+     $$L = \Phi^1_1(y_2)\Phi^2_2(y_2) - \Phi^1_2(y_2)\Phi^2_1(y_2) = 0$$
 
 8. **Alternative Approach:**  
    - Use central differencing to approximate derivatives and simplify numerical implementation.
