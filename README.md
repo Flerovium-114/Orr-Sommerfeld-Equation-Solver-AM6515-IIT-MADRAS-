@@ -48,25 +48,25 @@ with a and b found from the Orr-Sommerfeld equation.
 4. **Boundary Conditions:**  
    - Enforce physical boundary conditions:  
    
-     $$\hat{\psi}(y_1) = 0, \quad \frac{d\hat{\psi}}{dy}(y_1) = 0$$ 
-     This reduces the solution to:  
+     $$\hat{\psi}(y_1) = 0, \quad \frac{d\hat{\psi}}{dy}(y_1) = 0$$
+     This forces $$\gamma_3 = 0$$ and $$\gamma_4=0$$ and the solution reduces to satisfying:
    
      $$\Phi(y) = \gamma_1\Phi^1(y) + \gamma_2\Phi^2(y)$$
 
-5. **Numerical Integration:**  
+6. **Numerical Integration:**  
    - Use RK-4 to solve for $$\Phi^1(y)$$  and $$\Phi^2(y)$$
 
-6. **Eigenvalue Problem:**  
+7. **Eigenvalue Problem:**  
    - At $$y = y_2$$, impose:  
      
      $$\gamma_1\Phi^1_1(y_2) + \gamma_2\Phi^2_1(y_2) = 0, \quad \gamma_1\Phi^1_2(y_2) + \gamma_2\Phi^2_2(y_2) = 0$$
 
-7. **Solve Determinant:**  
+8. **Solve Determinant:**  
    - For non-trivial $$\gamma_1, \gamma_2$$ , solve:  
 
      $$L = \Phi^1_1(y_2)\Phi^2_2(y_2) - \Phi^1_2(y_2)\Phi^2_1(y_2) = 0$$
 
-8. **Alternative Approach:**  
+9. **Alternative Approach:**  
    - Use central differencing to approximate derivatives and simplify numerical implementation.
 
 
