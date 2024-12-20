@@ -7,9 +7,11 @@ Follow the references for gaining a deeper understanding of how the code works. 
 
 ## The Orr-Sommerfeld Equation 
 - The Orr-Sommerfeld equation is given by:
+- 
 $$(\overline{U} - c)\left(\frac{d^2}{dy^2} - k^2\right)\hat{\psi} - \hat{\psi}\frac{d^2 \overline{U}}{dy^2} = \frac{1}{ikR_e}\left(\frac{d^2}{dy^2} - k^2\right)^2\hat{\psi}$$
 It is derived from the governing equations i.e, the continuity and momentum equations after non-dimensionalising with relevant spatial and temporal scales. $$\Psi$$ is the stream function.
 - A normal mode solution is adopted:
+
 $$\psi = \frac{\hat{\psi(y)}}{2}e^{i(kx - \omega t)} + C.C$$
 
 References:
