@@ -29,7 +29,11 @@ $$(\overline{U} - c)\left(\frac{d^2}{dy^2} - k^2\right)\hat{\psi} - \hat{\psi}\f
      $$\Phi' = A(y)\Phi$$
      
      with:  
-     
+
+  ```math
+\begin{bmatrix}X\\Y\end{bmatrix}
+```
+
      $$\Phi = \begin{pmatrix} \hat{\psi} & \frac{d\hat{\psi}}{dy} & \frac{d^2\hat{\psi}}{dy^2} & \frac{d^3\hat{\psi}}{dy^3} \end{pmatrix}, \quad A(y) = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ a & 0 & b & 0 \end{bmatrix}$$
      
 
@@ -67,7 +71,6 @@ $$(\overline{U} - c)\left(\frac{d^2}{dy^2} - k^2\right)\hat{\psi} - \hat{\psi}\f
 8. **Alternative Approach:**  
    - Use central differencing to approximate derivatives and simplify numerical implementation.
 
-For detailed implementation, refer to the code and examples.
 
 
 References:
