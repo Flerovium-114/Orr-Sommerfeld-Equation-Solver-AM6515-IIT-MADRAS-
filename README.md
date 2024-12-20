@@ -21,7 +21,6 @@ $$(\overline{U} - c)\left(\frac{d^2}{dy^2} - k^2\right)\hat{\psi} - \hat{\psi}\f
 
 ## Numerical Techniques
 ### Shooting Method
-## Orr-Sommerfeld Equation Solution
 
 1. **Matrix Formulation:**  
    - Rewrite the O.S equation as:  
@@ -69,7 +68,53 @@ with a and b found from the Orr-Sommerfeld equation.
 9. **Alternative Approach:**  
    - Use central differencing to approximate derivatives and simplify numerical implementation.
 
+### Spectral Methods
+The Orr-Sommerfeld equation, after rearranging, reads:
+```math
+\left( -U k^2 - U'' - \frac{k^4}{ikRe} \right) \hat{\psi} + \left( U + \frac{2k^2}{ikRe} \right)D^2\hat{\psi} - \frac{1}{ikRe} D^4\hat{\psi} = c\left( D^2\hat{\psi} - k^2\hat{\psi}\right ) 
+```
 
+with the boundary conditions:
+```math
+\hat{\psi}(\pm 1) = D\hat{\psi}(\pm 1) = 0
+```
+where $$D$$ is the derivative matrix.\\
+Chebyshev Polynomials of the first kind are given by:
+```math
+    T_n(y) = cos(ncos^{-1}(y))
+```
+for $$-1 \leq y \leq 1$$
+We expand the eigenfunctions in a Chebyshev series:
+```math
+\hat{\psi}(y) = \sum_{n=0}^N a_n T_n(y)
+```
+where $$T_n(y)$$ are Chebyshev polynomials of degree $$n$$. 
+
+The derivatives of the eigenfunctions are obtained by differentiating the expansion. For the second derivative, for example:
+```math
+D^2\hat{\psi}(y) = \sum_{n=0}^N a_n T_n''(y),
+```
+and similarly for the fourth derivative. Substituting this expansion into the Orr-Sommerfeld equation, we get:
+```math
+\left( U(y) k^2 - U''(y) - \frac{k^4}{i k \text{Re}} \right) \sum_{n=0}^N a_n T_n(y) 
++ \left(U(y) + \frac{2 k^2}{i k \text{Re}}\right) \sum_{n=0}^N a_n T_n''(y) \nonumber \\
+- \frac{1}{i k \text{Re}} \sum_{n=0}^N a_n T_n''''(y) &= c \left( \sum_{n=0}^N a_n T_n''(y) - k^2 \sum_{n=0}^N a_n T_n(y) \right)
+```
+
+We require this equation to be satisfied at the Gauss-Lobatto collocation points $y_j = \cos\left(\frac{\pi j}{N}\right)$. This allows us to use the recurrence relations to evaluate the derivatives of the Chebyshev polynomials.
+
+The discretized boundary conditions read:
+```math
+\sum_{n=0}^N a_n T_n(1) = 0, \quad \sum_{n=0}^N a_n T_n'(1) = 0,
+```
+```math
+\sum_{n=0}^N a_n T_n(-1) = 0, \quad \sum_{n=0}^N a_n T_n'(-1) = 0.
+```
+The final result is a generalized eigenvalue problem of the form:
+```math
+A a = c B a
+```
+Where we solve for the eigen value, $$c$$ which is the complex velocity.
 
 References:
 1) [**Temporal and Spatial Stability Analysis of the Orr-Sommerfeld Equation**](https://www.cdsimpson.net/2015/04/temporal-and-spatial-stability-analysis.html#:~:text=This%20is%20a%20nonlinear%20ordinary,opposite%20boundary%20conditions%20are%20met).
