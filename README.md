@@ -97,8 +97,7 @@ D^2\hat{\psi}(y) = \sum_{n=0}^N a_n T_n''(y),
 and similarly for the fourth derivative. Substituting this expansion into the Orr-Sommerfeld equation, we get:
 ```math
 \left( U(y) k^2 - U''(y) - \frac{k^4}{i k \text{Re}} \right) \sum_{n=0}^N a_n T_n(y) 
-+ \left(U(y) + \frac{2 k^2}{i k \text{Re}}\right) \sum_{n=0}^N a_n T_n''(y) \nonumber \\
-- \frac{1}{i k \text{Re}} \sum_{n=0}^N a_n T_n''''(y) &= c \left( \sum_{n=0}^N a_n T_n''(y) - k^2 \sum_{n=0}^N a_n T_n(y) \right)
++ \left(U(y) + \frac{2 k^2}{i k \text{Re}}\right) \sum_{n=0}^N a_n T_n''(y) - \frac{1}{i k \text{Re}} \sum_{n=0}^N a_n T_n''''(y) &= c \left( \sum_{n=0}^N a_n T_n''(y) - k^2 \sum_{n=0}^N a_n T_n(y) \right)
 ```
 
 We require this equation to be satisfied at the Gauss-Lobatto collocation points $y_j = \cos\left(\frac{\pi j}{N}\right)$. This allows us to use the recurrence relations to evaluate the derivatives of the Chebyshev polynomials.
